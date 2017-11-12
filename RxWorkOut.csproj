@@ -11,6 +11,7 @@
     <PackageReference Include="System.Reactive.Core" Version="3.1.1" />
     <PackageReference Include="System.Reactive.linq" Version="*" />
     <PackageReference Include="System.Reactive.PlatformServices" Version="*" />
+    <PackageReference Include="System.Reactive.Windows.Threading" Version="*" />
   </ItemGroup>
 
 </Project>

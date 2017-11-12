@@ -1,7 +1,7 @@
 using System;
 using System.Linq;
 using System.Reactive.Linq;
-
+using RxWorkOut.Core;
 namespace RxWorkOut
 {
     public class Exercise2
