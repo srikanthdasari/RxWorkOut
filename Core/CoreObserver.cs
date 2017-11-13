@@ -2,7 +2,7 @@ using System;
 
 namespace RxWorkOut.Core
 {
-    public class MyObserver : IObserver<int>
+    public class CoreObserver : IObserver<int>
     {
         
         public virtual void OnCompleted()

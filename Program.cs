@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Threading;
+using RxWorkOut.Core;
 
 namespace RxWorkOut
 {
@@ -9,7 +10,7 @@ namespace RxWorkOut
         static void Main(string[] args)
         {
             Console.WriteLine("Thread {0}", Thread.CurrentThread.ManagedThreadId);
-            Exercise4 obj=new Exercise4(); 
+            Exercise6 obj=new Exercise6(); 
             obj.DoWorkOut();
         }
     }

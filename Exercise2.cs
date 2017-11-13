@@ -4,17 +4,17 @@ using System.Reactive.Linq;
 using RxWorkOut.Core;
 namespace RxWorkOut
 {
-    public class Exercise2
+    public class Exercise2:WorkOut
     {
-        public Exercise2()
+        public Exercise2():base()
         {
             
         }   
 
         public void DoWorkOut()
         {
-            var observablequery=AllCore.DoWarmUp().ToObservable();
-            observablequery.Subscribe(Console.Write, AllCore.ImDone);
+            var observablequery=this.DoWarmup().ToObservable();
+            observablequery.Subscribe(Console.Write, this.OnFinished);
         }
     }
 }

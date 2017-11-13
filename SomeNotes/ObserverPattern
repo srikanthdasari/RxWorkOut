@@ -29,3 +29,11 @@ interface IObservable
 {
     Subscribe();
 }
+
+
+
+IObservable.Subscribe(IObserver observer)
+{
+    observer.OnNext(value);
+    observer.OnCompleted();
+}
