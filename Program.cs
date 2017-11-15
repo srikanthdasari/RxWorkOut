@@ -10,7 +10,7 @@ namespace RxWorkOut
         static void Main(string[] args)
         {
             Console.WriteLine("Thread {0}", Thread.CurrentThread.ManagedThreadId);
-            Exercise6 obj=new Exercise6(); 
+            Exercise9 obj=new Exercise9(); 
             obj.DoWorkOut();
         }
     }
