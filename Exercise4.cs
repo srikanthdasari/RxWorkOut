@@ -13,7 +13,7 @@ namespace RxWorkOut
 
         public void DoWorkOut()
         {
-            var observableuery=this.DoWarmup().ToObservable();  //Object which Implements IObservable Interaface
+            var observableuery=this.DoWarmup.ToObservable();  //Object which Implements IObservable Interaface
             //Create Observer
             var observer=Observer.Create<int>(this.OnProcessing); //Object which Implements IObserver Interface
 

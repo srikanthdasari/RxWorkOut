@@ -24,7 +24,7 @@ namespace RxWorkOut
 
         public void DoWorkOut()
         {
-                var observableQuery=this.DoWarmup().ToObservable(scheduler: NewThreadScheduler.Default);
+                var observableQuery=this.DoWarmup.ToObservable(scheduler: NewThreadScheduler.Default);
                 observableQuery.Subscribe(this.OnProcessing,this.OnFinished);
         }
     }

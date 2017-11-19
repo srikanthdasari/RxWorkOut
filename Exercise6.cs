@@ -12,14 +12,17 @@ namespace RxWorkOut.Core
         {
             
         }
-        public override IEnumerable<int> DoWarmup()
+        public override IEnumerable<int> DoWarmup
         {
-            
-            var numbers = from number in new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12 }
+            get
+            {
+
+                var numbers = from number in new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12 }
                               select Slow(number);
-                
-            return numbers;
-            
+
+                return numbers;
+
+            }
         }
 
         public override void OnProcessing(int i)
@@ -41,7 +44,7 @@ namespace RxWorkOut.Core
 
         public void DoWorkOut()
         {
-            var queryObservable=this.DoWarmup().ToObservable();   
+            var queryObservable=this.DoWarmup.ToObservable();   
 
             queryObservable.Subscribe(OnProcessing,OnFinished);
 

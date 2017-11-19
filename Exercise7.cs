@@ -17,7 +17,7 @@ namespace RxWorkOut
         public void DoWorkOut()
         {
             //Observvable seuence ruon on the new thread
-            var observableQuery=this.DoWarmup().ToObservable(NewThreadScheduler.Default);
+            var observableQuery=this.DoWarmup.ToObservable(NewThreadScheduler.Default);
             // Observable seuence that adds disposable object to the
             // objects that rx will clean up when it is finidh processing sequence
             var observableWithDispose=Observable.Using<int,CoreDispose>(()=>new CoreDispose(),d=>observableQuery);

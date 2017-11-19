@@ -4,7 +4,7 @@ namespace RxWorkOut.Core
 {
     public interface IWorkOut
     {
-        IEnumerable<int> DoWarmup();
+        IEnumerable<int> DoWarmup { get; }
 
         void OnFinished();
 

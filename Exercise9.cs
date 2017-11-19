@@ -14,12 +14,15 @@ namespace RxWorkOut.Core
         {
             
         }
-        public override IEnumerable<int> DoWarmup()
+        public override IEnumerable<int> DoWarmup
         {
-            var numbers = from number in new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 }
+            get
+            {
+                var numbers = from number in new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 }
                               select Slow(number);
-            return numbers;
-            
+                return numbers;
+
+            }
         }
 
         public override void OnProcessing(int i)
@@ -45,7 +48,7 @@ namespace RxWorkOut.Core
 
             Console.WriteLine("Application\tThread: {0}",Thread.CurrentThread.ManagedThreadId);
             var seqDone=new ManualResetEvent(false);
-            var queryObservable=this.DoWarmup().ToObservable(ThreadPoolScheduler.Instance).Finally(()=>seqDone.Set());   
+            var queryObservable=this.DoWarmup.ToObservable(ThreadPoolScheduler.Instance).Finally(()=>seqDone.Set());   
 
             queryObservable.Subscribe(OnProcessing,this.OnError,OnFinished);
 

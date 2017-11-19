@@ -13,7 +13,7 @@ namespace RxWorkOut
 
         public void DoWorkOut()
         {
-            var observablequery=this.DoWarmup().ToObservable();
+            var observablequery=this.DoWarmup.ToObservable();
             observablequery.Subscribe(Console.Write, this.OnFinished);
         }
     }

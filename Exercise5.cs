@@ -14,7 +14,7 @@ namespace RxWorkOut.Core
 
         public void DoWorkOut()
         {
-            var observableQuery=this.DoWarmup().ToObservable();
+            var observableQuery=this.DoWarmup.ToObservable();
 
             var observer=new CoreObserver();
 
